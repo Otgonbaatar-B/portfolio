@@ -1,8 +1,11 @@
 import { GrayTitle } from "./GrayTitle";
 
-export const About = ({ isDarkMode }) => {
+export const About = ({ isDarkMode, id }) => {
   return (
-    <div className="w-full flex justify-center bg-gray-light-50 dark:bg-gray-night-50">
+    <div
+      id="about"
+      className="w-full flex justify-center bg-gray-light-50 dark:bg-gray-night-50"
+    >
       <div className="container flex flex-col justify-center items-center w-full h-auto px-4 py-16 md:px-20 md:py-24 gap-12">
         <GrayTitle caption="About me" />
         <div className=" grid md:grid-cols-2 w-full h-auto gap-6  md:gap-12">

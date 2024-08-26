@@ -1,4 +1,4 @@
-export const CloseIconDark = () => {
+export const HamburgerIconNight = () => {
   return (
     <svg
       width="36"
@@ -8,14 +8,21 @@ export const CloseIconDark = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M24 12L12 24"
+        d="M10 18H26"
         stroke="#D1D5DB"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M12 12L24 24"
+        d="M10 12H26"
+        stroke="#D1D5DB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M10 24H26"
         stroke="#D1D5DB"
         stroke-width="2"
         stroke-linecap="round"

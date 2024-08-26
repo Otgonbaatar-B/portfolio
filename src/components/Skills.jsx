@@ -16,12 +16,18 @@ import {
   CypressIcon,
   StorybookIcon,
   GitIcon,
+  ExpressJsIconNight,
+  SocketIoIconNight,
+  CypressIconNight,
 } from "./icons/JavascriptIcon";
 import { SkillBox } from "./SkillBox";
 
-export const Skills = () => {
+export const Skills = ({ isDarkMode }) => {
   return (
-    <div className="w-full flex justify-center bg-gray-light dark:bg-gray-night ">
+    <div
+      id="skills"
+      className="w-full flex justify-center bg-gray-light dark:bg-gray-night "
+    >
       <div className="container flex flex-col items-center w-full h-auto px-4 py-16 md:px-20 md:py-24 gap-12">
         <div className="flex flex-col justify-center items-center gap-4">
           <GrayTitle caption="Skills" />
@@ -34,9 +40,19 @@ export const Skills = () => {
             <SkillBox iconComponent={<ReactIcon />} text={"React"} />
             <SkillBox iconComponent={<NextJsIcon />} text={"Next.js"} />
             <SkillBox iconComponent={<NodeJsIcon />} text={"Node.js"} />
-            <SkillBox iconComponent={<ExpressJsIcon />} text={"Express.js"} />
+            <SkillBox
+              iconComponent={
+                isDarkMode ? <ExpressJsIconNight /> : <ExpressJsIcon />
+              }
+              text={"Express.js"}
+            />
             <SkillBox iconComponent={<NestJsIcon />} text={"Nest.js"} />
-            <SkillBox iconComponent={<SocketIoIcon />} text={"Socke.io"} />
+            <SkillBox
+              iconComponent={
+                isDarkMode ? <SocketIoIconNight /> : <SocketIoIcon />
+              }
+              text={"Socke.io"}
+            />
 
             <SkillBox iconComponent={<PostgreSqlIcon />} text={"PostgreSql"} />
             <SkillBox iconComponent={<MongoDBIcon />} text={"MongoDB"} />
@@ -46,7 +62,12 @@ export const Skills = () => {
               text={"Tailwindcss"}
             />
             <SkillBox iconComponent={<FigmaIcon />} text={"Figma"} />
-            <SkillBox iconComponent={<CypressIcon />} text={"Cypress"} />
+            <SkillBox
+              iconComponent={
+                isDarkMode ? <CypressIconNight /> : <CypressIcon />
+              }
+              text={"Cypress"}
+            />
             <SkillBox iconComponent={<StorybookIcon />} text={"Storybook"} />
             <SkillBox iconComponent={<GitIcon />} text={"Git"} />
           </div>

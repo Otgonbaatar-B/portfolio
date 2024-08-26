@@ -1,13 +1,15 @@
 import { useRef, useState } from "react";
 import { GrayTitle } from "./GrayTitle";
-import { CallIcon } from "./icons/CallIcon";
+import { CallIcon, CallIconNight } from "./icons/CallIcon";
 import { CopyIcon } from "./icons/CopyIcon";
 import { EmailIcon } from "./icons/EmailIcon";
-import { FigmaIcon } from "./icons/FigmaIcon";
-import { GithubIcon } from "./icons/GithubIcon";
-import { TwitterIcon } from "./icons/TwitterIcon";
+import { FigmaIcon, FigmaIconNight } from "./icons/FigmaIcon";
+import { GithubIcon, GithubIconNight } from "./icons/GithubIcon";
+import { TwitterIcon, TwitterIconNight } from "./icons/TwitterIcon";
+import { EmailIconNight } from "./icons/EmailIconNight";
+import { CopyIconNight } from "./icons/CopyIconNight";
 
-export const ContactMe = () => {
+export const ContactMe = ({ isDarkMode }) => {
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
   const [notification, setNotification] = useState("");
@@ -22,7 +24,10 @@ export const ContactMe = () => {
   };
 
   return (
-    <div className="w-full flex justify-center bg-gray-light dark:bg-gray-night">
+    <div
+      id="contact"
+      className="w-full flex justify-center bg-gray-light dark:bg-gray-night"
+    >
       <div className="container flex w-full h-auto px-4 py-16 md:px-20 md:py-24">
         <div className="flex flex-col w-full gap-6 md:px-8 md:gap-12">
           <div className="flex flex-col justify-center items-center gap-4">
@@ -35,7 +40,7 @@ export const ContactMe = () => {
 
           <div className="flex flex-col justify-center items-center gap-4">
             <div className="flex items-center gap-5">
-              <EmailIcon />
+              {isDarkMode ? <EmailIconNight /> : <EmailIcon />}
               <h1
                 ref={emailRef}
                 className="font-inter text-3xl font-semibold leading-10 tracking-tight text-center text-gray-light-900 dark:text-gray-night-900"
@@ -46,11 +51,11 @@ export const ContactMe = () => {
                 onClick={() => copyToClipboard(emailRef.current.innerText)}
                 className="cursor-pointer"
               >
-                <CopyIcon />
+                {isDarkMode ? <CopyIconNight /> : <CopyIcon />}
               </button>
             </div>
             <div className="flex items-center gap-5">
-              <CallIcon />
+              {isDarkMode ? <CallIconNight /> : <CallIcon />}
               <h1
                 ref={phoneRef}
                 className="font-inter text-3xl font-semibold leading-10 tracking-tight text-center text-gray-light-900 dark:text-gray-night-900"
@@ -61,7 +66,7 @@ export const ContactMe = () => {
                 onClick={() => copyToClipboard(phoneRef.current.innerText)}
                 className="cursor-pointer"
               >
-                <CopyIcon />
+                {isDarkMode ? <CopyIconNight /> : <CopyIcon />}
               </button>
             </div>
           </div>
@@ -71,13 +76,13 @@ export const ContactMe = () => {
             </h1>
             <div className="flex">
               <div className="w-9 h-9 p-[6px]">
-                <GithubIcon />
+                {isDarkMode ? <GithubIconNight /> : <GithubIcon />}
               </div>
               <div className="w-9 h-9 p-[6px]">
-                <TwitterIcon />
+                {isDarkMode ? <TwitterIconNight /> : <TwitterIcon />}
               </div>
               <div className="w-9 h-9 p-[6px]">
-                <FigmaIcon />
+                {isDarkMode ? <FigmaIconNight /> : <FigmaIcon />}
               </div>
             </div>
           </div>

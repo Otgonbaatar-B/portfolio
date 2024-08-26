@@ -26,10 +26,10 @@ export default function Home() {
         />
         <Hero isDarkMode={isDarkMode} />
         <About id="about" isDarkMode={isDarkMode} />
-        <Skills id="skills" />
+        <Skills id="skills" isDarkMode={isDarkMode} />
         <Experience id="experience" isDarkMode={isDarkMode} />
-        <Work id="work" />
-        <ContactMe id="contact" />
+        <Work id="work" isDarkMode={isDarkMode} />
+        <ContactMe id="contact" isDarkMode={isDarkMode} />
         <Footer isDarkMode={isDarkMode} />
         <MobileMenu isDarkMode={isDarkMode} />
       </div>

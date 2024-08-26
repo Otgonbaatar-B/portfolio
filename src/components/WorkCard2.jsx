@@ -1,12 +1,12 @@
 import { GrayTitle } from "./GrayTitle";
 
-export const WorkCard2 = ({ imgUrl }) => {
+export const WorkCard2 = ({ isDarkMode, imgUrl }) => {
   return (
     <div className="grid md:grid-cols-2 w-full h-auto shadow-md">
-      <div className="md:hidden flex w-full p-8 md:p-12 bg-gray-light-50 dark:bg-gray-night-200  rounded-tr-xl rounded-br-xl shadow-md">
+      <div className="md:hidden flex w-full p-8 md:p-12 bg-gray-light-50 dark:bg-gray-night-200 rounded-tr-xl rounded-tl-xl md:rounded-tr-xl md:rounded-br-xl shadow-md">
         <img src={imgUrl} alt="" />
       </div>
-      <div className="flex flex-col w-full p-8 md:p-12 bg-white dark:bg-gray-night-100 rounded-tl-xl rounded-bl-xl shadow-md gap-6">
+      <div className="flex flex-col w-full p-8 md:p-12 bg-white dark:bg-gray-night-100 rounded-br-xl rounded-bl-xl md:rounded-tl-xl md:rounded-br-none md:rounded-bl-xl shadow-md gap-6">
         <h1 className="font-inter text-xl font-semibold leading-7 text-left text-gray-light-900 dark:text-gray-night-900">
           UBCab
         </h1>
@@ -28,7 +28,11 @@ export const WorkCard2 = ({ imgUrl }) => {
           <GrayTitle caption={"Git"} />
         </div>
         <div>
-          <img src="/IconButton.svg" alt="" srcset="" />
+          {isDarkMode ? (
+            <img src="/IconButtonNight.svg" alt="" srcset="" />
+          ) : (
+            <img src="/IconButton.svg" alt="" srcset="" />
+          )}
         </div>
       </div>
       <div className="hidden md:flex justify-center w-full p-8 md:p-12 bg-gray-light-50 dark:bg-gray-night-200  rounded-tr-xl rounded-br-xl shadow-md">

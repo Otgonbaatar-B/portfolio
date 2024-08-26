@@ -1,8 +1,8 @@
-import { FigmaIcon } from "./icons/FigmaIcon";
-import { GithubIcon } from "./icons/GithubIcon";
+import { FigmaIcon, FigmaIconNight } from "./icons/FigmaIcon";
+import { GithubIcon, GithubIconNight } from "./icons/GithubIcon";
 import { GreenCirclIcon } from "./icons/GreenCircleIcon";
-import { TwitterIcon } from "./icons/TwitterIcon";
-import { Location } from "./Location";
+import { TwitterIcon, TwitterIconNight } from "./icons/TwitterIcon";
+import { Location, LocationNight } from "./Location";
 
 export const Hero = ({ isDarkMode }) => {
   return (
@@ -11,12 +11,16 @@ export const Hero = ({ isDarkMode }) => {
         <div className="grid md:grid-cols-2 justify-between w-full h-auto md:px-8 md:flex">
           <div className="flex flex-col w-full h-auto justify-center md:hidden">
             <div className="w-full h-auto items-center">
-              <img
-                src="/MobilePicContainer.svg"
-                width={"416px"}
-                alt=""
-                srcSet=""
-              />
+              {isDarkMode ? (
+                <img src="/MobilePicContainer.png" width={"416px"} alt="" />
+              ) : (
+                <img
+                  src="/MobilePicContainer.svg"
+                  width={"416px"}
+                  alt=""
+                  srcSet=""
+                />
+              )}
             </div>
           </div>
           <div className="flex flex-col w-full h-full gap-12">
@@ -35,7 +39,7 @@ export const Hero = ({ isDarkMode }) => {
             </div>
             <div className="flex flex-col text-gray-light-600 dark:text-gray-night-600 gap-2">
               <div className="flex gap-1">
-                <Location />
+                {isDarkMode ? <LocationNight /> : <Location />}
                 <h1>Ulaanbaatar, Mongolia</h1>
               </div>
               <div className="flex gap-1">
@@ -45,13 +49,13 @@ export const Hero = ({ isDarkMode }) => {
             </div>
             <div className="flex">
               <div className="w-9 h-9 p-[6px]">
-                <GithubIcon />
+                {isDarkMode ? <GithubIconNight /> : <GithubIcon />}
               </div>
               <div className="w-9 h-9 p-[6px]">
-                <TwitterIcon />
+                {isDarkMode ? <TwitterIconNight /> : <TwitterIcon />}
               </div>
               <div className="w-9 h-9 p-[6px]">
-                <FigmaIcon />
+                {isDarkMode ? <FigmaIconNight /> : <FigmaIcon />}
               </div>
             </div>
           </div>

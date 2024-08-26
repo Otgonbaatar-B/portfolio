@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { CloseIconDark } from "./icons/CloseIconDark";
 import { CloseIconLight } from "./icons/CloseIconLight";
 import { MoonIcon } from "./MoonIcon";
@@ -8,7 +9,25 @@ export const MobileMenu = ({
   handleOpenMenu,
   isOpenMenu,
   handleToggleDarkMode,
+  onClick,
 }) => {
+  useEffect(() => {
+    if (isOpenMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpenMenu]);
+
+  const handleMenuClick = (sectionId) => {
+    onClick(sectionId);
+    handleOpenMenu();
+  };
+
   return (
     <div
       className={`absolute transition-all duration-1000 ease-in-out ${
@@ -19,12 +38,12 @@ export const MobileMenu = ({
         <div className="flex space-between p-4 border-solid border-b border-gray-light-100 dark:border-gray-night-100">
           <div className="flex w-full">
             {isDarkMode ? (
-              <div className="w-[76px] h-9 bg-center bg-contain items-center bg-no-repeat">
-                <img src="/NightTom.svg" alt="" srcset="" />
+              <div className="flex w-[76px] h-9 bg-center bg-contain items-center bg-no-repeat">
+                <img src="/NightTom.svg" alt="" />
               </div>
             ) : (
-              <div className="w-[76px] h-9 bg-center bg-contain items-center bg-no-repeat">
-                <img src="/LightTom.svg" alt="" srcset="" />
+              <div className="flex w-[76px] h-9 bg-center bg-contain items-center bg-no-repeat">
+                <img src="/LightTom.svg" alt="" />
               </div>
             )}
           </div>
@@ -36,16 +55,28 @@ export const MobileMenu = ({
           </button>
         </div>
         <div className="flex flex-col p-4 gap-4 border-solid border-b border-gray-light-100 dark:border-gray-night-100">
-          <h1 className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer">
+          <h1
+            onClick={() => handleMenuClick("about")}
+            className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer"
+          >
             About
           </h1>
-          <h1 className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer">
+          <h1
+            onClick={() => handleMenuClick("work")}
+            className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer"
+          >
             Work
           </h1>
-          <h1 className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer">
+          <h1
+            onClick={() => handleMenuClick("skills")}
+            className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer"
+          >
             Testimonials
           </h1>
-          <h1 className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer">
+          <h1
+            onClick={() => handleMenuClick("contact")}
+            className="text-gray-light-600 dark:text-gray-night-600 cursor-pointer"
+          >
             Contact
           </h1>
         </div>
@@ -59,7 +90,9 @@ export const MobileMenu = ({
             </div>
           </div>
           <button className="w-full h-auto px-4 py-[6px] rounded-t-xl rounded-b-xl text-base font-medium leading-6 text-center bg-gray-light-800 dark:bg-gray-night-800 text-gray-light-100 dark:text-gray-night-100 cursor-pointer">
-            Download CV
+            <a href="CV.pdf" download="CV.pdf">
+              Download CV
+            </a>
           </button>
         </div>
       </div>

@@ -3,11 +3,14 @@ import { UpworkCard } from "./UpworkCard";
 
 export const Experience = ({ isDarkMode }) => {
   return (
-    <div className="w-full bg-gray-light-50 dark:bg-gray-night-50 flex justify-center">
+    <div
+      id="experience"
+      className="w-full bg-gray-light-50 dark:bg-gray-night-50 flex justify-center"
+    >
       <div className="container flex flex-col items-center w-full h-auto px-4 py-16 md:px-20 md:py-24 gap-6 md:gap-12 ">
         <div className="flex flex-col justify-center items-center gap-4">
           <GrayTitle caption="Experience" />
-          <h1 className="text-xl font-normal text-[#4B5563]">
+          <h1 className="text-xl font-normal text-gray-light-600 dark:text-gray-night-600">
             Here is a quick summary of my most recent experiences:
           </h1>
         </div>
