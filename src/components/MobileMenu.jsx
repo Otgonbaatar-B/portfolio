@@ -11,7 +11,7 @@ export const MobileMenu = ({
 }) => {
   return (
     <div
-      className={`absolute transition-all duration-100000 ease-in-out ${
+      className={`absolute transition-all duration-1000 ease-in-out ${
         isOpenMenu ? "right-0" : "left-[-100%]"
       } flex justify-end min-w-[375px] w-full h-screen bg-[rgba(17,24,39,0.1)] dark:bg-[rgba(31,41,55,0.1)] backdrop-blur-sm `}
     >

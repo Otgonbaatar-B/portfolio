@@ -23,6 +23,10 @@ export const Header = ({ handleToggleDarkMode, isDarkMode }) => {
     }
   };
 
+  const downloadCV = () => {
+    return;
+  };
+
   return (
     <div className="w-full flex justify-center bg-gray-light-default dark:bg-gray-night">
       <div className="container flex w-full p-4 md:px-20 md:py-4">
@@ -65,7 +69,9 @@ export const Header = ({ handleToggleDarkMode, isDarkMode }) => {
                 {isDarkMode ? <MoonIcon /> : <SunIcon />}
               </div>
               <button className="w-auto h-auto px-4 py-[6px] rounded-t-xl rounded-b-xl text-base font-medium leading-6 text-left bg-gray-light-800 dark:bg-gray-night-800 text-gray-light-100 dark:text-gray-night-100">
-                Download CV
+                <a href="CV.pdf" download="CV.pdf">
+                  Download CV
+                </a>
               </button>
             </div>
           </div>
