@@ -2,32 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --gray-light: #ffffff;
+  --gray-light-50: #f9fafb;
+  --gray-light-100: #f3f4f6;
+  --gray-light-200: #e5e7eb;
+  --gray-light-300: #d6d9de;
+  --gray-light-400: #a8aebf;
+  --gray-light-500: #6b7280;
+  --gray-light-600: #4b5563;
+  --gray-light-700: #374151;
+  --gray-light-800: #1f2937;
+  --gray-light-900: #111827;
+  --gray-light-950: #030712;
+  --gray-l-900-10: #1118271a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+:dark {
+  --gray-night: #030712;
+  --gray-night-50: #111827;
+  --gray-night-100: #1f2937;
+  --gray-night-200: #374151;
+  --gray-night-300: #4b5563;
+  --gray-night-400: #6b7280;
+  --gray-night-500: #9ca3af;
+  --gray-night-600: #d1d5db;
+  --gray-night-700: #e5e7eb;
+  --gray-night-800: #f3f4f6;
+  --gray-night-900: #f9fafb;
+  --gray-night-950: #ffffff;
+  --gray-n-10: #030712;
 }
